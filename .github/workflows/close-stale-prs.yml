@@ -1,0 +1,16 @@
+name: 'REQUIRED: Close stale PRs'
+on:
+  schedule:
+  - cron: '0 2 * * *'
+
+permissions:
+    pull-requests: write
+    contents: read
+    issues: write
+
+jobs:
+    close-prs:
+        name: Close stale PRs
+        uses: vu-platform/action-workflows/.github/workflows/client.close-stale-pr.yml@v1
+        with:
+          debug-only: false
