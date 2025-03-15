@@ -1,0 +1,12 @@
+name: 'REQUIRED: Check CODEOWNERS on Commit'
+on:
+  push:
+    branches:
+      - "*"
+      - "!main"
+      - "!canary-*"
+
+jobs:
+  check-codeowners:
+    name: Check Codeowners
+    uses: vu-platform/action-workflows/.github/workflows/client.check-codeowners.yml@v1
